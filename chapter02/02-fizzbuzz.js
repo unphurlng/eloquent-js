@@ -34,11 +34,39 @@ potentially by making good use of the || operator.
 */
 
 // ===================================================
-// My attempt:
+// My attempt - Version #1 (simplest):
 // ===================================================
+for (let i = 1; i <= 16; i++) {
+  if (i % 15 === 0) {
+    console.log('FizzBuzz');
+  } else if (i % 3 === 0) {
+    console.log('Fizz');
+  } else if (i % 5 === 0) {
+    console.log('Buzz');
+  } else {
+    console.log(i);
+  };
+};
+// ===================================================
+// My attempt - Version #2:
+// (you can add conditions independent of one another)
+// ===================================================
+for (let i = 1; i <= 100; i++) {
+  let output = '';
 
+  if (i % 3 === 0) { output += 'Fizz' };
+  if (i % 5 === 0) { output += 'Buzz' };
+  if (i % 10 === 0) { output += 'Fuzz' };
+  if (i % 30 === 0) { output += 'Bizz' };
 
-
+  console.log(output || i);
+};
 // ===================================================
 // Book's solution:
 // ===================================================
+for (let n = 1; n <= 100; n++) {
+  let output = "";
+  if (n % 3 == 0) output += "Fizz";
+  if (n % 5 == 0) output += "Buzz";
+  console.log(output || n);
+}
