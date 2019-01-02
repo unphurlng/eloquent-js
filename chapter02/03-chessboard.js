@@ -47,9 +47,37 @@ loop but inside the outer loop.
 // ===================================================
 // My attempt:
 // ===================================================
+// 1. outer loop creates new line.
+// 2. inner loop needs to build out grid details on each line
 
+let rows = 8;
+let grid = '';
+
+for (let i = 0; i < rows; i++) {
+  for (let j = 0; j < rows; j++) {
+
+  };
+  grid += '\n';
+};
+console.log(grid);
 
 
 // ===================================================
 // Book's solution:
 // ===================================================
+let size = 8;
+
+let board = "";
+
+for (let y = 0; y < size; y++) {
+  for (let x = 0; x < size; x++) {
+    if ((x + y) % 2 == 0) {
+      board += " ";
+    } else {
+      board += "#";
+    }
+  }
+  board += "\n";
+}
+
+console.log(board);
